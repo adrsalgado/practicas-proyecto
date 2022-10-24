@@ -1,0 +1,7 @@
+el scroll sigue sin funcionar
+
+
+el crud de agregar productos (producto.php) dice que el producto se agrego con exito pero  no sale ni en la lista de productos de la pagina, ni en la base de datos la informacion del producto que acabo de agregar.
+no esta enviando la informacion, pero no encuentro el porque.
+
+ porque cuando inserto informacion de un nuevo producto si se puede visualizar en la tabla de lista de productos eso quiere decir que las variables estan bien.
