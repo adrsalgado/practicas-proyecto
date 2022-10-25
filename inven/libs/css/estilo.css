@@ -396,7 +396,8 @@ body{
     padding-left: 20px;
     margin-right:auto;
     margin-left: auto;
-    display: inline;
+    display: flex;
+    overflow: auto;
 
    
 }    
