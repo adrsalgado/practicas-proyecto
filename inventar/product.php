@@ -1,4 +1,4 @@
-<?php
+<?php<?php<?php
   $page_title = 'Lista de productos';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
@@ -19,10 +19,25 @@
         </div>
         <div class="panel-body">
           <table class="table table-bordered">
-      
+
+          
+
             <thead>
               <tr>
-              
+                
+              <form method="post" action="ajax.php" autocomplete="off" id="sug-form">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Búsqueda</button>
+            </span>
+            <input type="text" id="sug_input" class="form-control" name="producto"  placeholder="Buscar por el nombre del producto">
+         </div>
+         <div id="result" class="list-group"></div>
+        </div>
+    </form>
+  </div>
+</div>
                 <th class="text-center" style="width: 50px;">#</th>
                 <th class="text-center" style="width: 150px;">Imagen </th>
                 <th class="text-center" style="width: 150px;">Producto </th>
