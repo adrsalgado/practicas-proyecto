@@ -32,6 +32,7 @@ body{
     padding: 0 20px;
     background: #a6b3f2;
     border: 1px solid #f2f2f2;
+   
   }
   
   
@@ -159,13 +160,92 @@ body{
   }
   
   
-  .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  .col-lg-1, .col-lg-10, .col-md-08,.col-lg-11, .col-lg-12, .col-md-012, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 35px;
+   
   }
   
+/*categorias agregar*/
+  .col-md-5{
+    width: 50%;
+    
+}
+
+
+
+/*Tabla grupos*/
+.col-md-12{
+    width: 150%;  
+}
+
+
+
+/*categorias lista*/
+.col-md-7{
+    width: 100%;
+  
+}
+
+
+
+/**/
+.col-md-120{
+    width: 115%
+    
+}
+
+
+
+/**/
+.col-md-14{
+    width: 250%
+    
+}
+
+
+/*tabla agregar producto*/
+.col-md-9{
+width:100%;
+}
+
+
+/*tabla editar producto*/
+.col-md-11{
+    width:80%;
+    }
+
+   
+    
+/*tabla media imagenes*/
+.col-md-08{
+    width:200%;
+    }  
+
+    
+
+/*tabla editar pedido*/
+.col-md-14{
+    width:200%;
+    }
+
+ /*tabla administrar pedido*/
+ .col-md-012{
+    width:200%;
+    } 
+
+
+
+/*tabla reporte de pedido*/
+.col-md-16{
+    width:200%;
+    }
+
+
+  
+
   
   .btn {
     display: inline-block;
