@@ -1,9 +1,11 @@
 <?php
   $page_title = 'Agregar producto';
   require_once('includes/load.php');
+  
   // Checkin What level user has permission to view this page
   page_require_level(2);
-  $all_categories = find_all('categories');
+  
+  $all_categories = find_all('categoria');
   $all_photo = find_all('media');
 ?>
 <?php
@@ -30,12 +32,22 @@
        $media_id = remove_junk($db->escape($_POST['product-photo']));
      }
      $date    = make_date();
-     $query  = "INSERT INTO products (";
-     $query .=" lote,stock,invima,producto,presentacion,proveedor,vencimiento,marca,categorie_id,media_id,date";
-     $query .=") VALUES (";
-     $query .="  '{$p_lote}','{$p_stock}', '{$p_invima}',  '{$p_producto}','{$p_presentacion}', '{$p_marca}', '{$p_proveedor}', '{$p_vencimiento}', '{$p_cat}', '{$media_id}', '{$date}'";
-     $query .=")";
-     $query .=" ON DUPLICATE KEY UPDATE producto='{$p_producto}'";
+
+     $query  = "INSERT INTO producto ("
+             . "NombreProd,CodigoProd"
+             . ",lote,stock,invima,presentacion"
+             . ",NITproveedor,vencimiento,marca,CodigoCat"
+             . ",Imagen"
+             . ") VALUES ("
+             . " '{$p_producto}','{$p_producto}'"
+             . ",'{$p_lote}','{$p_stock}', '{$p_invima}', '{$p_presentacion}'"
+             . ",'{$p_proveedor}', '{$p_vencimiento}', '{$p_marca}', '{$p_cat}'"
+             . ",'{$media_id}'"
+             . ")"
+             . " ON DUPLICATE KEY UPDATE producto.stock=producto.stock + {$p_stock}";
+     
+     //die($query);
+     
      if($db->query($query)){
        $session->msg('s',"Producto agregado exitosamente. ");
        redirect('add_product.php', false);
@@ -58,7 +70,7 @@
     <?php echo display_msg($msg); ?>
   </div>
 </div>
-  <div class="row">
+<div class="row">
   <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -90,10 +102,6 @@
                   </div>
                  </div>
 
-
-
-
-
                  <div class="col-md-2">
                    <div class="input-group">
                      <span class="input-group-addon">
@@ -102,7 +110,6 @@
                      <input type="text" class="form-control" name="invima" placeholder="Invima">
                   </div>
                  </div>
-
 
                  <div class="col-md-4">
                    <div class="input-group">
@@ -115,7 +122,6 @@
 
                  </br></br>
 
-
                  <div class="panel-body">
                    <div class="input-group">
                      <span class="input-group-addon">
@@ -124,7 +130,6 @@
                      <input type="text" class="form-control" style="width: 60%" name="proveedor" placeholder="Proveedor">
                   </div>
                  </div>
-
 
                </div>
               </div>
@@ -135,8 +140,8 @@
                     <select class="form-control" name="product-categorie">
                       <option value="">Selecciona una categoría</option>
                     <?php  foreach ($all_categories as $cat): ?>
-                      <option value="<?php echo (int)$cat['id'] ?>">
-                        <?php echo $cat['name'] ?></option>
+                      <option value="<?php echo $cat['CodigoCat'] ?>">
+                        <?php echo $cat['Nombre'] ?></option>
                     <?php endforeach; ?>
                     </select>
                   </div>

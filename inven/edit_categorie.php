@@ -19,16 +19,16 @@ if(isset($_POST['edit_cat'])){
   validate_fields($req_field);
   $cat_name = remove_junk($db->escape($_POST['categorie-name']));
   if(empty($errors)){
-        $sql = "UPDATE categories SET name='{$cat_name}'";
-       $sql .= " WHERE id='{$categorie['id']}'";
-     $result = $db->query($sql);
-     if($result && $db->affected_rows() === 1) {
-       $session->msg("s", "Categoría actualizada con éxito.");
-       redirect('categorie.php',false);
+    $sql = "UPDATE categories SET name='{$cat_name}'";
+    $sql .= " WHERE id='{$categorie['id']}'";
+    $result = $db->query($sql);
+    if($result && $db->affected_rows() === 1) {
+      $session->msg("s", "Categoría actualizada con éxito.");
+      redirect('categorie.php',false);
      } else {
-       $session->msg("d", "Lo siento, actualización falló.");
-       redirect('categorie.php',false);
-     }
+      $session->msg("d", "Lo siento, actualización falló.");
+      redirect('categorie.php',false);
+    }
   } else {
     $session->msg("d", $errors);
     redirect('categorie.php',false);
