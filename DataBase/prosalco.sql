@@ -190,9 +190,10 @@ CREATE TABLE `producto` (
   `Marca` varchar(30) NOT NULL,
   `Stock` int(20) NOT NULL,
   `NITProveedor` varchar(30) NOT NULL,
-  `Imagen` varchar(150) NOT NULL,
-  `Nombre` varchar(30) NOT NULL,
-  `Estado` varchar(15) NOT NULL,
+  -- `Imagen` varchar(150) DEFAULT "",
+  `Imagen` int(11) DEFAULT 0,
+  -- `Nombre` varchar(30) NOT NULL,
+  -- `Estado` varchar(15) NOT NULL,
   `lote` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -200,9 +201,9 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `CodigoProd`, `NombreProd`, `CodigoCat`, `presentacion`, `vencimiento`, `invima`, `Marca`, `Stock`, `NITProveedor`, `Imagen`, `Nombre`, `Estado`, `lote`) VALUES
-(15, '1234', 'acetaminofen', '004', 'CAJA X 12 TAB DE 10 CAPSULAS', '2022-10-20 00:00:00', '565', 'genfar', 141, '5585', '1234.jpg', 'admin', 'Activo', '14G5T2W'),
-(16, '45', 'paracetamol', '001', 'TABLETA IP X 15', '2022-10-13 00:00:00', '897', 'dolo-650', 141, '5585', '45.jpg', 'admin', 'Activo', '87lk1');
+INSERT INTO `producto` (`id`, `CodigoProd`, `NombreProd`, `CodigoCat`, `presentacion`, `vencimiento`, `invima`, `Marca`, `Stock`, `NITProveedor`, `Imagen`, `lote`) VALUES
+(15, '1234', 'acetaminofen', '004', 'CAJA X 12 TAB DE 10 CAPSULAS', '2022-10-20 00:00:00', '565', 'genfar', 141, '5585', '1234.jpg', '14G5T2W'),
+(16, '45', 'paracetamol', '001', 'TABLETA IP X 15', '2022-10-13 00:00:00', '897', 'dolo-650', 141, '5585', '45.jpg', '87lk1');
 
 -- --------------------------------------------------------
 
@@ -395,7 +396,8 @@ ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `CodigoCat` (`CodigoCat`),
   ADD KEY `NITProveedor` (`NITProveedor`),
-  ADD KEY `Agregado` (`Nombre`);
+  ADD UNIQUE KEY `CodigoProd` (`CodigoProd`),
+  ADD UNIQUE KEY `NombreProd` (`NombreProd`);
 
 --
 -- Indices de la tabla `products`
