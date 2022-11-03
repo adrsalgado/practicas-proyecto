@@ -230,7 +230,7 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`,`producto`, `producto`, `name`, `quantity`, `buy_price`, `categorie_id`, `media_id`, `date`, `presentacion`, `proveedor`, `vencimiento`, `marca`, `lote`) VALUES
+INSERT INTO `products` (`id`,`producto`, `name`, `quantity`, `buy_price`, `categorie_id`, `media_id`, `date`, `presentacion`, `proveedor`, `vencimiento`, `marca`, `lote`) VALUES
 (5, '', 'ELEMENTOS DE PROTECCION PERSONAL', '1225', '235', 5, 2, '2022-10-18 21:07:14', '0', 0, '0000-00-00 00:00:00', '0', '0'),
 (8, '', 't35ty6', '34', '53', 8, 3, '2022-10-18 21:20:32', '0', 0, '0000-00-00 00:00:00', '0', '0'),
 (12, '', 'jijiji', '123', '789', 5, 2, '2022-10-19 21:57:47', '', 0, '0000-00-00 00:00:00', '', ''),

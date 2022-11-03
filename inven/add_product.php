@@ -1,9 +1,13 @@
 <?php
   $page_title = 'Agregar producto';
   require_once('includes/load.php');
+  
   // Checkin What level user has permission to view this page
   page_require_level(2);
+  
   $all_categories = find_all('categories');
+  print_r($all_categories);
+  die();
   $all_photo = find_all('media');
 ?>
 <?php
@@ -30,12 +34,25 @@
        $media_id = remove_junk($db->escape($_POST['product-photo']));
      }
      $date    = make_date();
+
+     $query  = "INSERT INTO products (";
+     $query .=" lote,stock,invima,presentacion,proveedor,vencimiento,marca,categorie_id,media_id,date";
+     $query .=") VALUES (";
+     $query .="  '{$p_lote}','{$p_stock}', '{$p_invima}',  '{$p_producto}','{$p_presentacion}', '{$p_marca}', '{$p_proveedor}', '{$p_vencimiento}', '{$p_cat}', '{$media_id}', '{$date}'";
+     $query .=")";
+     $query .=" ON DUPLICATE KEY UPDATE producto='{$p_producto}'";
+     
+     /*
      $query  = "INSERT INTO products (";
      $query .=" lote,stock,invima,producto,presentacion,proveedor,vencimiento,marca,categorie_id,media_id,date";
      $query .=") VALUES (";
      $query .="  '{$p_lote}','{$p_stock}', '{$p_invima}',  '{$p_producto}','{$p_presentacion}', '{$p_marca}', '{$p_proveedor}', '{$p_vencimiento}', '{$p_cat}', '{$media_id}', '{$date}'";
      $query .=")";
      $query .=" ON DUPLICATE KEY UPDATE producto='{$p_producto}'";
+     */
+     
+     die($query);
+     
      if($db->query($query)){
        $session->msg('s',"Producto agregado exitosamente. ");
        redirect('add_product.php', false);
