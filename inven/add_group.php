@@ -2,7 +2,7 @@
   $page_title = 'Agregar grupo';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
-   page_require_level(1);
+  page_require_level(1);
 ?>
 <?php
   if(isset($_POST['add'])){
@@ -18,9 +18,9 @@
      redirect('add_group.php', false);
    }
    if(empty($errors)){
-           $name = remove_junk($db->escape($_POST['group-name']));
-          $level = remove_junk($db->escape($_POST['group-level']));
-         $status = remove_junk($db->escape($_POST['status']));
+        $name = remove_junk($db->escape($_POST['group-name']));
+        $level = remove_junk($db->escape($_POST['group-level']));
+        $status = remove_junk($db->escape($_POST['status']));
 
         $query  = "INSERT INTO user_groups (";
         $query .="group_name,group_level,group_status";

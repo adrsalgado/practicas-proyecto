@@ -48,14 +48,15 @@ public function query($sql)
       if (trim($sql != "")) {
           $this->query_id = $this->con->query($sql);
       }
-      if (!$this->query_id)
+      if (!$this->query_id) {
         // solo para el modo desarrollador
-              die("Error en esta consulta :<pre> " . $sql ."</pre>");
+        $msg = $this->con->error;
+        die("Error en esta consulta :<pre> " . $sql ."<br/>" . $msg . "<br/></pre>");
        // Para el modo de producción
         //  die("Error on Query");
 
-       return $this->query_id;
-
+      }
+    return $this->query_id;
    }
 
 /*--------------------------------------------------------------*/
